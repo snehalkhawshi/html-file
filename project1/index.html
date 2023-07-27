@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Project</title>
+
+
+	<link rel="stylesheet" type="text/css" href="css/index/index.css">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="resources/common/favicon.ico">
+
+	<!-- libs include -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" type="text/css" href="css/lib/element_ui/element_ui_default.css">
+	<link rel="stylesheet" type="text/css" href="css/lib/element_ui/element_ui_display.css">
+	<link rel="stylesheet" type="text/css" href="css/lib/owl_carousel/owl.carousel.min.css">
+	<!-- common css includes -->
+	<link rel="stylesheet" type="text/css" href="css/fonts/fonts.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- libs js includes -->
+	<script type="text/javascript" src="js/lib/jQuery/jQuery.min.js"></script>
+	<script type="text/javascript" src="js/lib/vue/vue.js"></script>
+	<script type="text/javascript" src="js/lib/element_ui/element_ui.js"></script>
+	<script type="text/javascript" src="js/lib/owl_carousel/owl.carousel.js"></script>
+</head>
+<body>
+    <div id="mainApp" class="ht-100 wt-100">
+		<el-row class="ht-100 wt-100 overflow-auto" >
+			<el-col class="ht-100">
+				<el-container>
+					<el-header height="60px" class="custom-border">
+						<el-row class="ht-100 wt-100">
+							<el-col class="ht-100 wt-100 d-flex align-items-center justify-content-center" :span="12">logo</el-col>
+							<el-col class="ht-100 wt-100 d-flex align-items-center justify-content-center " :span="12" >
+								<div v-for="(item,index) in navbar_array" class="mr">
+									<a  :href="'#'+item.id" class="underline-remove">{{item.name}}</a>
+								</div>
+								<!-- <el-menu mode="horizontal">
+									<el-menu-item v-for="(item,index) in navbar_array" class="mr">{{item.name}}</el-menu-item>
+								</el-menu> -->
+							</el-col>
+						</el-row>
+					</el-header>
+					<el-main class="ht-100 wt-100 p-0">
+						<template >
+							<el-carousel indicator-position="none"  height="500px">
+							  <el-carousel-item v-for="item in blogArray" :key="item.id">
+								<!-- <div> -->
+									<img :src="item.img" class="wt-100 ht-100">
+							    <!-- </div> -->
+							  </el-carousel-item>
+							</el-carousel>
+						</template>
+						<template>
+							<el-row class="ht-100 wt-100 p-5 d-flex align-items-center">
+								<el-col :span="12" class= "wt-100 ht-100 d-flex align-items-center justify-content-end">
+									<el-row  class="box-card1 custom-border">
+										<img src="img/image1.jpg" class="wt-100 ht-100">
+									</el-row>
+								</el-col>
+								<el-col :span="12" class= "wt-100 ht-100 d-flex align-items-center justify-content-start">
+									<el-row  class="box-card2 custom-border  p-2">
+										<el-col class= "ht-100">
+                                            <el-row class="ht-100 wt-100">
+                                               <el-row id="info_prop">Information</el-row>
+											   <el-row class="row-line"></el-row>
+											   <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+											   <p class="text-color ">Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                               <el-button>Know More</el-button>
+											</el-row>
+											
+										</el-col>
+									</el-row >
+								</el-col>
+							</el-row>
+						
+						</template>
+						  
+
+					</el-main>
+					<el-footer class="custom-border">
+						<el-row class="ht-100 wt-100">
+							<el-col class="ht-100 wt-100 d-flex align-items-center justify-content-center" :span="5"><b>TRAVELLER</b></el-col>
+							<el-col class="ht-100 wt-100 d-flex align-items-center justify-content-center" :span="12" >
+								<div v-for="(item,index) in navbar_array" class="mr">
+									<a  :href="'#'+item.id" class="underline-remove">{{item.name}}</a>
+								</div>
+								<!-- <el-menu mode="horizontal">
+									<el-menu-item v-for="(item,index) in navbar_array" class="mr">{{item.name}}</el-menu-item>
+								</el-menu> -->
+							</el-col>
+							<el-col class="ht-100 wt-100 d-flex align-items-center justify-content-center" :span="7">
+								<div class="social-media-icons mr d-flex align-item-center justify-content-center" v-for="items in social_media_array">
+									<i :class="items" class="color-light-orange"></i>
+								</div>
+							</el-col>
+						</el-row>
+
+					</el-footer>
+				</el-container>
+
+			</el-col>
+		</el-row>
+	</div>
+<script type="text/javascript" src="js/index/index.js"></script>
+</body>
+	
+</html>
+		
